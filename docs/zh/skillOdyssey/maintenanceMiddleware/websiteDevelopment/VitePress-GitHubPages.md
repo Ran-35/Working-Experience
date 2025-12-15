@@ -382,4 +382,5 @@ git config --global user.email "你的邮箱@example.com"
 2. "Build and deployment" -> "Branch" -> "选择分支" -> "选择文件夹"
 
 (7)若无法自动推送并执行工作流  
-1. 点击 "Action" -> 选择自己在deploy.yml中定义的名字
+1. 点击 "Action" -> 选择自己在deploy.yml中定义的工作流名字
+2. 点击 "Run workflow" 执行该工作流
