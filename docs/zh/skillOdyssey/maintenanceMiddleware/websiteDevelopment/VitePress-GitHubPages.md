@@ -380,3 +380,5 @@ git config --global user.email "你的邮箱@example.com"
 (6)启用 GitHub Pages  
 1. 点击 "Settings" → "Pages"
 2. "Build and deployment" -> "Branch" -> "选择分支" -> "选择文件夹"
+
+(7)若无法自动推送并执行工作流
