@@ -52,6 +52,8 @@ jobs:
           # 默认 VitePress 生成的 dist 文件夹在 .vitepress/dist 或 docs/.vitepress/dist
           # 根据你的项目结构修改
 
+      - name: List dist folder
+        run: ls -al docs/.vitepress/dist
   deploy:
     environment:
       name: github-pages  # GitHub Pages 环境名，通常无需改
