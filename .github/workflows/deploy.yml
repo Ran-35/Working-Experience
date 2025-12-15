@@ -1,0 +1,65 @@
+name: Deploy VitePress site to Pages  # 工作流名称，可随意修改，不影响功能
+
+on:
+  push:
+    branches: [main]  # 当 main 分支有推送时触发部署
+  workflow_dispatch:  # 允许手动触发工作流
+
+permissions:
+  contents: read      # 允许读取仓库内容
+  pages: write        # 允许写入 GitHub Pages
+  id-token: write     # 用于 GitHub Pages 部署的身份验证
+
+concurrency:
+  group: pages        # 避免同时运行多个部署
+  cancel-in-progress: false  # 不取消正在运行的部署
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # 使用最新的 Ubuntu 虚拟环境
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4  # 检出仓库代码
+        with:
+          fetch-depth: 0           # 获取完整 git 历史，必要时（比如版本标签）用
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24        # Node.js 版本，可根据项目需要修改
+          cache: npm              # 启用 npm 缓存，加快构建速度
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5  # 配置 GitHub Pages 相关权限
+        with:
+          enablement: github-actions
+
+      - name: Install dependencies
+        run: npm ci  # 安装依赖，保证干净的安装（推荐用于 CI）
+
+      - name: Build with VitePress
+        run: npm run docs:build  
+        # 构建 VitePress 网站
+        # ⚠️ 注意：这里命令要与你 package.json 中的构建命令一致
+        # 如果你是 npm run build 或 npm run docs:build，则按实际修改
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs/.vitepress/dist  
+          # ⚠️ 注意：这里是构建输出目录
+          # 默认 VitePress 生成的 dist 文件夹在 .vitepress/dist 或 docs/.vitepress/dist
+          # 根据你的项目结构修改
+
+  deploy:
+    environment:
+      name: github-pages  # GitHub Pages 环境名，通常无需改
+      url: ${{ steps.deployment.outputs.page_url }}  # 自动获取部署 URL
+    runs-on: ubuntu-latest
+    needs: build  # 依赖 build 任务完成后再执行
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4  # 将构建好的站点部署到 GitHub Pages
