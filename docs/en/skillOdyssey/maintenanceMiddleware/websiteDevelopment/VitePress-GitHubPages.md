@@ -1,66 +1,66 @@
-# VitePress + GitHub Pages 搭建个人网站
+# VitePress + GitHub Pages to Build a Personal Website
 
 ---
 
-### **什么是 VitePress？**
+### **What is VitePress?**
 
-* **VitePress** 是基于 **Vite** 和 **Vue 3** 的静态网站生成器，主要用于写文档、博客等内容。
-* 它的设计目标是**轻量**、**快速**、**简洁**，支持 **Markdown** 写作，并能自动生成网站结构。
-* VitePress 使用 **Vite** 作为构建工具，启动速度非常快，热更新体验优秀。
-* 适合用来创建**技术文档**、**个人博客**、**项目网站**等。
-
----
-
-### **什么是 GitHub Pages？**
-
-* **GitHub Pages** 是 GitHub 提供的免费静态网页托管服务。
-* 你可以直接把静态网站代码推送到 GitHub 仓库，GitHub Pages 会帮你自动部署并生成访问地址。
-* 适合托管个人博客、项目主页、文档站点等。
-* 不需要服务器，配置简单，支持自定义域名。
+* **VitePress** is a static site generator based on **Vite** and **Vue 3**, mainly used for writing documentation, blogs, and other content.
+* It is designed to be **lightweight**, **fast**, and **simple**, supporting **Markdown** writing, and automatically generating the structure of the site.
+* VitePress uses **Vite** as the build tool, which makes the startup speed extremely fast and provides an excellent hot-reload experience.
+* It is suitable for creating **technical documentation**, **personal blogs**, **project websites**, etc.
 
 ---
 
-## VitePress 的安装及配置使用
+### **What is GitHub Pages?**
 
-**VitePress 官网**：[VitePress](https://vitepress.dev/)
+* **GitHub Pages** is a free static web hosting service provided by GitHub.
+* You can directly push your static site code to a GitHub repository, and GitHub Pages will automatically deploy it and generate an accessible URL.
+* It is ideal for hosting personal blogs, project homepages, documentation sites, and more.
+* No server is needed, configuration is simple, and custom domain names are supported.
 
-#### 1、安装 VitePress
+---
 
-**1.1 安装 Node.js 和 npm**
+## Installation and Configuration of VitePress
 
-验证 Node.js 和 npm 是否安装成功：
+**VitePress Official Website**: [VitePress](https://vitepress.dev/)
+
+#### 1. Install VitePress
+
+**1.1 Install Node.js and npm**
+
+Check if Node.js and npm are installed:
 
 ```bash
 node -v
 npm -v
 ```
 
-如果没有安装，请先安装 Node.js。
+If not installed, please first install Node.js.
 
-**1.2 安装 VitePress**
+**1.2 Install VitePress**
 
-安装 VitePress：
+Install VitePress using:
 
 ```bash
 npm add -D vitepress@next
 ```
 
-这将：
+This will:
 
-* 安装 `vitepress` 包
-* 将 VitePress 作为开发依赖 (`devDependencies`) 添加到 `package.json` 文件中。
+* Install the `vitepress` package
+* Add VitePress as a development dependency (`devDependencies`) to your `package.json` file.
 
-安装完成后，会生成 `node_modules` 文件夹和 `package-lock.json` 文件。
+After installation, `node_modules` folder and `package-lock.json` file will be generated.
 
-**1.3 运行安装向导**
+**1.3 Run the Installation Wizard**
 
-运行命令：
+Run the command:
 
 ```bash
 npx vitepress init
 ```
 
-安装向导交互内容如下：
+The installation wizard will prompt with the following:
 
 ```bash
 ┌  Welcome to VitePress!
@@ -97,25 +97,25 @@ npx vitepress init
 
 ---
 
-#### 2、启动 VitePress
+#### 2. Start VitePress
 
-**2.1 启动本地开发服务器**
+**2.1 Start the Local Development Server**
 
-运行命令：
+Run the following command:
 
 ```bash
 npm run docs:dev
 ```
 
-或者：
+Or:
 
 ```bash
 npx vitepress dev docs
 ```
 
-**2.2 修改端口及服务器设置**
+**2.2 Modify Port and Server Settings**
 
-找到 `/docs/.vitepress/config.mts` 文件，修改如下配置：
+Open `/docs/.vitepress/config.mts` and modify the following configuration:
 
 ```ts
 import { defineConfig } from 'vitepress'
@@ -161,11 +161,11 @@ export default defineConfig({
 
 ---
 
-#### 3、配置 VitePress
+#### 3. Configure VitePress
 
-**3.1 配置国际化**
+**3.1 Configure Localization**
 
-修改 `/docs/.vitepress/config.mts` 文件进行国际化配置：
+Edit the `/docs/.vitepress/config.mts` file to configure localization:
 
 ```ts
 import { defineConfig } from 'vitepress'
@@ -269,28 +269,28 @@ export default defineConfig({
 
 ---
 
-## GitHub Pages 的安装及配置使用
+## Installation and Configuration of GitHub Pages
 
-#### 1、GitHub创建仓库
+#### 1. Create a GitHub Repository
 
-1. 创建一个新的仓库。
-2. 选择 **Public**，不初始化 **README** 文件。
+1. Create a new repository.
+2. Choose **Public**, and do not initialize with a **README** file.
 
-#### 2、本地项目下初始化 Git
+#### 2. Initialize Git in the Local Project
 
-在项目根目录下运行命令：
+Run the following command in the root directory of the project:
 
 ```bash
 git init
 ```
 
-**2.1 创建 deploy.yml 文件**
+**2.1 Create `deploy.yml` File**
 
 ```bash
 New-Item -ItemType File -Path .github\workflows\deploy.yml -Force
 ```
 
-**2.2 修改 deploy.yml 文件**
+**2.2 Modify `deploy.yml` File**
 
 ```yml
 name: Deploy VitePress site to Pages  # 工作流名称，可随意修改，不影响功能
@@ -358,47 +358,33 @@ jobs:
         uses: actions/deploy-pages@v4  # 将构建好的站点部署到 GitHub Pages
 ```
 
-**2.3 添加远程仓库并推送代码**
+**2.3 Add Remote Repository and Push Code**
 
 ```bash
-git remote add origin https://github.com/username/repositoriesname.git	# 添加远程仓库
-git remote -v 															# 检查远程仓库是否添加成功
+git remote add origin https://github.com/username/repositoriesname.git  # Add remote repository
+git remote -v                                                        # Verify remote repository added successfully
 
-# 若添加成功应该会有如下输出：
+# The output should be:
 # origin  https://github.com/username/repositoriesname.git (fetch)
 # origin  https://github.com/username/repositoriesname.git (push)
-```
-
-```bash
-git add .						# 1. 将当前目录下的所有更改添加到暂存区
-git commit -m "Initial commit"	# 2. 提交更改到本地 Git 仓库，附带提交信息 "Initial commit"
-git branch -M main				# 3. 将当前分支重命名为 'main'
-git push -u origin main			# 4. 将本地 'main' 分支的内容推送到远程仓库 'origin'
 ````
 
-注：可能会提示如下错误
-```powershell
-# 1. fatal: detected dubious ownership in repository at 'D:/Home-Website'
-# 原因：Git 2.35+ 版本在 Windows 上的安全提示：Git 发现当前仓库的所有者和你当前登录的用户不同，所以出于安全考虑拒绝操作。
-# 解决：这条命令会告诉 Git：“这个目录可以信任”
-git config --global --add safe.directory D:/Home-Website 
-
-# 2. Author identity unknown
-# 原因：Git 还不知道你的用户名和邮箱，所以无法提交。
-# 解决：配置全局用户名和邮箱(若只想针对该项目，可以去掉 --global)
-git config --global user.name "你的名字"
-git config --global user.email "你的邮箱@example.com"
+```bash
+git add .                        # 1. Add all changes in the current directory to the staging area
+git commit -m "Initial commit"   # 2. Commit changes to the local Git repository with the message "Initial commit"
+git branch -M main               # 3. Rename the current branch to 'main'
+git push -u origin main          # 4. Push the 'main' branch from the local repository to the remote repository
 ```
 
-**2.4 启用 GitHub Pages**
+**2.4 Enable GitHub Pages**
 
-1. 进入 GitHub 仓库 **Settings** → **Pages**。
-2. 在 **Build and deployment** 中选择 **Branch** 和 **Folder**，然后启用 GitHub Pages。
+1. Go to the **Settings** of your GitHub repository → **Pages**.
+2. In **Build and deployment**, select **Branch** and **Folder**, and then enable GitHub Pages.
 
 ---
 
-### 若无法自动推送并执行工作流
+### If the Workflow Fails to Trigger Automatically
 
-1. 点击 **Action**。
-2. 选择自己在 `deploy.yml` 中定义的工作流名称。
-3. 点击 **Run workflow** 执行该工作流。
+1. Click on **Action**.
+2. Select the workflow name defined in `deploy.yml`.
+3. Click on **Run workflow** to trigger the workflow manually.
