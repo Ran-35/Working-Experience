@@ -35,7 +35,7 @@ export default defineConfig({
             {
               text: '编程之道',
               items: [
-                { text: 'Java基础', link: '/zh/skillOdyssey/programmingWay/JavaBased/Lock-Mechanism' },
+                { text: 'Java基础', link: '/zh/skillOdyssey/programmingWay/JavaBased/1.IO-NIO' },
                 { text: '第三方工具', link: '/zh/skillOdyssey/programmingWay/Plugin/EasyExcel' }
               ],
             },
@@ -81,18 +81,24 @@ export default defineConfig({
             {
               text: '基础知识',
               items: [
-                { text: '输入/输出', link: '/zh/skillOdyssey/programmingWay/JavaBased/IO-NIO' }
+                { text: '输入/输出', link: '/zh/skillOdyssey/programmingWay/JavaBased/1.IO-NIO' }
               ]
             },
             {
               text: '并发编程',
               items: [
-                { text: '锁机制', link: '/zh/skillOdyssey/programmingWay/JavaBased/Lock-Mechanism' },
-                { text: '多线程', link: '/zh/skillOdyssey/programmingWay/JavaBased/Multithreading' },
-                { text: '线程池', link: '/zh/skillOdyssey/programmingWay/JavaBased/Thread-Pooling' },
-                { text: '并发工具包', link: '/zh/skillOdyssey/programmingWay/JavaBased/Concurrent-Toolkit' },
+                { text: '锁机制', link: '/zh/skillOdyssey/programmingWay/JavaBased/2.Lock-Mechanism' },
+                { text: '多线程', link: '/zh/skillOdyssey/programmingWay/JavaBased/3.Multithreading' },
+                { text: '线程池', link: '/zh/skillOdyssey/programmingWay/JavaBased/4.Thread-Pooling' },
+                { text: '并发工具包', link: '/zh/skillOdyssey/programmingWay/JavaBased/5.Concurrent-Toolkit' },
               ]
-            }
+            },
+            {
+              text: 'Socket与网络编程',
+              items: [
+                { text: 'Websocket', link: '/zh/skillOdyssey/programmingWay/JavaBased/6.Socket-Network' }
+              ]
+            },
           ],
           '/zh/skillOdyssey/programmingWay/Plugin/': [
             {
