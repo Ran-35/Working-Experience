@@ -1,25 +1,16 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
-
-hero:
-  name: "My Awesome Project"
-  text: "A VitePress Site"
-  tagline: My great project tagline
-  actions:
-    - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
-
-features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 
+<script setup>
+import { onBeforeMount } from 'vue'
+import { useRouter } from 'vitepress'
+
+const { go } = useRouter()
+
+onBeforeMount(() => {
+  // 生产环境跳转需要考虑 base，开发环境直接跳 /zh/
+  const base = import.meta.env.BASE_URL
+  window.location.replace(`${base}zh/`)
+})
+</script>

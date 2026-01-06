@@ -4,19 +4,20 @@ export default defineConfig({
   title: "Journey of Growth",
   description: "A VitePress Site",
   lang: 'zh-CN',
-  base: process.env.NODE_ENV === 'production' ? '/Working-Experience/' : '/docs',
+  base: process.env.NODE_ENV === 'production' ? '/Working-Experience/' : '/',
 
   // 页面配置
   locales: {
-    root: {
+    zh: {
       label: '简体中文',
       lang: 'zh-CN',
+      link: '/zh/',
       title: "成长之旅",
       description: "个人成长与发展博客",
       themeConfig: {
         // 中文主题配置保持不变
         nav: [
-          { text: '首页', link: '/index.md' },
+          { text: '首页', link: '/zh/index' },
           { text: '技能探索', link: '/zh/skillOdyssey/skill-odyssey' },
           { text: '生活洞见', link: '/zh/lifeInsights' },
         ],
@@ -35,7 +36,7 @@ export default defineConfig({
             {
               text: '编程之道',
               items: [
-                { text: 'Java基础', link: '/zh/skillOdyssey/programmingWay/JavaBased/1.IO-NIO' },
+                { text: 'Java基础', link: '/zh/skillOdyssey/programmingWay/JavaBased/1.1.IO-NIO' },
                 { text: '第三方工具', link: '/zh/skillOdyssey/programmingWay/Plugin/EasyExcel' }
               ],
             },
@@ -81,7 +82,9 @@ export default defineConfig({
             {
               text: '基础知识',
               items: [
-                { text: '输入/输出', link: '/zh/skillOdyssey/programmingWay/JavaBased/1.IO-NIO' }
+                { text: '输入/输出', link: '/zh/skillOdyssey/programmingWay/JavaBased/1.1.IO-NIO' },
+                { text: '常用注解', link: '/zh/skillOdyssey/programmingWay/JavaBased/1.2.Annotation' },
+                { text: 'SSH 与 HTTP下载', link: '/zh/skillOdyssey/programmingWay/JavaBased/1.3.SSH-HTTP' },
               ]
             },
             {
@@ -204,11 +207,12 @@ export default defineConfig({
     en: {
       label: 'English',
       lang: 'en',
+      link: '/en/',
       title: "Journey of Growth",
       description: "A personal growth and development blog",
       themeConfig: {
         nav: [
-          { text: 'Home', link: '/en/index.md' },
+          { text: 'Home', link: '/en/index' },
           { text: 'Skill-Odyssey', link: '/en/skillOdyssey/skill-odyssey' },
           { text: 'Life-Insights', link: '/en/lifeInsights' }
         ],
@@ -227,7 +231,7 @@ export default defineConfig({
             {
               text: 'Programming Skills',
               items: [
-                { text: 'Java', link: '/en/skillOdyssey/programmingWay/JavaBased/Lock-Mechanism' },
+                { text: 'Java', link: '/en/skillOdyssey/programmingWay/JavaBased/1.1.IO-NIO' },
                 { text: 'Plugins', link: '/en/skillOdyssey/programmingWay/Plugin/EasyExcel' }
               ],
             },
@@ -275,7 +279,8 @@ export default defineConfig({
             {
               text: 'Base Knowledge',           // Java基础
               items: [
-                { text: 'IO/NIO', link: '/en/skillOdyssey/programmingWay/JavaBased/IO-NIO' }
+                { text: 'IO/NIO', link: '/en/skillOdyssey/programmingWay/JavaBased/1.1.IO-NIO' },
+                { text: 'Annotation', link: '/en/skillOdyssey/programmingWay/JavaBased/1.2.Annotation' }
               ]
             },
             {

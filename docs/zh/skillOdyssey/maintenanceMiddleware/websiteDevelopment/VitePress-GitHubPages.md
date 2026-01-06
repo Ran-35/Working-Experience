@@ -173,100 +173,208 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Journey of Growth",
   description: "A VitePress Site",
-  base: process.env.NODE_ENV === 'production' ? '/repositoriesname/' : '/docs',
+  lang: 'zh-CN',
+  base: process.env.NODE_ENV === 'production' ? '/Working-Experience/' : '/',
+
+  // 页面配置
   locales: {
-    'root': {
-      label: 'English',
-      lang: 'en',
-      title: "Journey of Growth",
-      description: "A personal growth and development blog",
-      themeConfig: {
-        nav: [
-          { text: 'Home', link: '/index.md' },
-          { text: 'Skill-Odyssey', link: '/skill-odyssey/skill-odyssey' },
-          { text: 'Life-Insights', link: '/life-insights/skill-odyssey' },
-        ],
-        sidebar: {
-          '/skill-odyssey/': [
-            {
-              text: 'Fundamental Theory',
-              items: [
-                { text: 'Programming', link: '/skill-odyssey/programming' },
-                { text: 'Design', link: '/skill-odyssey/design' },
-                { text: 'Operation', link: '/skill-odyssey/languages' },
-                { text: 'Infrastructure', link: '/skill-odyssey/other-skills' }
-              ]
-            }
-          ],
-          '/life-insights/': [
-            {
-              text: 'Personal Growth',
-              items: [
-                { text: 'Mindfulness', link: '/en/life-insights/mindfulness' },
-                { text: 'Productivity', link: '/en/life-insights/productivity' },
-                { text: 'Relationships', link: '/en/life-insights/relationships' }
-              ]
-            }
-          ]
-        }
-      }
-    },
     zh: {
       label: '简体中文',
       lang: 'zh-CN',
+      link: '/zh/',
       title: "成长之旅",
       description: "个人成长与发展博客",
       themeConfig: {
+        // 中文主题配置保持不变
         nav: [
-          { text: '首页', link: '/index.md' },
-          { text: '技能探索', link: '/zh/skill-odyssey' },
-          { text: '生活洞见', link: '/zh/life-insights' },
+          { text: '首页', link: '/zh/index' },
+          { text: '技能探索', link: '/zh/skillOdyssey/skill-odyssey' },
+          { text: '生活洞见', link: '/zh/lifeInsights' },
         ],
         sidebar: {
           '/zh/': [
             {
               text: '个人发展',
               items: [
-                { text: '技能发展', link: '/zh/skill-odyssey' },
-                { text: '个人成长', link: '/zh/life-insights' }
+                { text: '技能发展', link: '/zh/skillOdyssey' },
+                { text: '个人成长', link: '/zh/lifeInsights' }
               ]
             }
           ],
-          '/zh/life-insights/': [
-            { text: '正念', link: '/zh/life-insights/mindfulness' },
-            { text: '生产力', link: '/zh/life-insights/productivity' },
-            { text: '人际关系', link: '/zh/life-insights/relationships' }
+          '/zh/skillOdyssey/': [
+            // 编程技能
+            {
+              text: '编程之道',
+              items: [
+                { text: 'Java基础', link: '/zh/skillOdyssey/programmingWay/JavaBased/1.1.IO-NIO' },
+                { text: '第三方工具', link: '/zh/skillOdyssey/programmingWay/Plugin/EasyExcel' }
+              ],
+            },
+            // 算法与设计模式
+            {
+              text: '思维之源',
+              items: [
+                { text: '设计模式', link: '/zh/skillOdyssey/thoughtSource/designPatterns/design-patterns' }
+              ]
+            }
+          ],
+          '/zh/lifeInsights/': [
+            { text: '正念', link: '/zh/lifeInsights/mindfulness' },
+            { text: '生产力', link: '/zh/lifeInsights/productivity' },
+            { text: '人际关系', link: '/zh/lifeInsights/relationships' }
+          ],
+
+          // 程序设计
+          // 1.Java基础的左侧栏
+          '/zh/skillOdyssey/programmingWay/JavaBased/': [
+            {
+              text: '基础知识',
+              items: [
+                { text: '输入/输出', link: '/zh/skillOdyssey/programmingWay/JavaBased/1.1.IO-NIO' }
+              ]
+            },
+            {
+              text: '并发编程',
+              items: [
+                { text: '锁机制', link: '/zh/skillOdyssey/programmingWay/JavaBased/2.Lock-Mechanism' }
+              ]
+            }
           ]
+        // 其他中文配置...
+      }
+    },
+
+    en: {
+      label: 'English',
+      lang: 'en',
+      link: '/en/',
+      title: "Journey of Growth",
+      description: "A personal growth and development blog",
+      themeConfig: {
+        nav: [
+          { text: 'Home', link: '/en/index' },
+          { text: 'Skill-Odyssey', link: '/en/skillOdyssey/skill-odyssey' },
+          { text: 'Life-Insights', link: '/en/lifeInsights' }
+        ],
+        sidebar: {
+          '/en/': [
+            {
+              text: '个人发展',
+              items: [
+                { text: '技能发展', link: '/en/skillOdyssey' },
+                { text: '个人成长', link: '/en/lifeInsights' }
+              ]
+            }
+          ],
+          '/en/skillOdyssey/': [
+            // 编程之道
+            {
+              text: 'Programming Skills',
+              items: [
+                { text: 'Java', link: '/en/skillOdyssey/programmingWay/JavaBased/1.1.IO-NIO' },
+                { text: 'Plugins', link: '/en/skillOdyssey/programmingWay/Plugin/EasyExcel' }
+              ],
+            }
+          ],
+          '/en/lifeInsights/': [
+            { text: '正念', link: '/en/lifeInsights/mindfulness' },
+            { text: '生产力', link: '/en/lifeInsights/productivity' },
+            { text: '人际关系', link: '/en/lifeInsights/relationships' }
+          ],
+
+
+          // 程序设计
+          // 1.Java基础的左侧栏
+          '/en/skillOdyssey/programmingWay/JavaBased/': [
+            {
+              text: 'Base Knowledge',           // Java基础
+              items: [
+                { text: 'IO/NIO', link: '/en/skillOdyssey/programmingWay/JavaBased/1.1.IO-NIO' },
+                { text: 'Annotation', link: '/en/skillOdyssey/programmingWay/JavaBased/1.2.Annotation' }
+              ]
+            },
+            {
+              text: 'Concurrency Programming',  // 并发编程
+              items: [
+                { text: 'Lock Mechanism', link: '/en/skillOdyssey/programmingWay/JavaBased/Lock-Mechanism' },  // 锁机制
+                { text: 'Multithreading', link: '/en/skillOdyssey/programmingWay/JavaBased/Multithreading' },  // 多线程
+                { text: 'Thread Pooling', link: '/en/skillOdyssey/programmingWay/JavaBased/Thread-Pooling' },  // 线程池
+                { text: 'Concurrent Toolkit', link: '/en/skillOdyssey/programmingWay/JavaBased/Concurrent-Toolkit' },  // 并发工具包
+              ]
+            }
+          ]
+          // 其他英文配置...
         }
       }
-    }
+    },
+
   },
+  // vite服务器配置
   vite: {
     server: {
+      // 配置开发服务器的端口、主机名
       port: 5173,
       host: '0.0.0.0',
-      open: true,
-      https: false,
+      open: true,  // 设置为 true 时，Vite 会在启动开发服务器后自动打开浏览器访问该页面。
+
+      // 是否启用 https（默认是 false）
+      // https: false,
+
+      // 配置代理
       proxy: {
         '/api': {
-          target: 'http://localhost:8080',
-          changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, '')
+          target: 'http://localhost:8080',  // 将请求以 `/api` 开头的路径代理到 http://localhost:8080
+          changeOrigin: true,               // 设置为 true 时，代理服务器会修改请求的 Origin 为目标服务器的地址。
+          rewrite: (path) => path.replace(/^\/api/, ''),  // 将路径中的 `/api` 前缀去掉。例如请求 `/api/users` 会被重写为 `/users`，然后代理到 `http://localhost:8080/users`。
         }
       }
     }
   },
+
+  // 定制网站的主题和功能
   themeConfig: {
-    logo: '/logo.svg',
-    lastUpdated: {},
+    logo: '/logo.svg',// 设置了站点的 logo
+    lastUpdated: {},  // 启用页面的最后更新时间显示
     editLink: {
       pattern: 'https://github.com/your-username/your-repo/edit/main/docs/:path',
       text: 'Edit this page on GitHub'
+    },
+    // 控制页面的 目录大纲
+    outline: {
+      level: 'deep',  // 'shallow'：只显示顶级标题和二级标题。'deep'：显示更深的层级，通常会包含三级标题
+      label: 'On this page'
     }
+  },
+
+  // 启用markdown 配置
+  markdown: {
+    math: true  // 启用 数学公式支持
   }
+  
 })
 ```
 
+**3.2 配置入口**
+
+由于配置国际化，mts中的root路径已经被修改为zh，所以需要重新编写入口，使其跳转过去。在docs下的index.md文件里：
+```md
+---
+layout: home
+---
+
+<script setup>
+import { onBeforeMount } from 'vue'
+import { useRouter } from 'vitepress'
+
+const { go } = useRouter()
+
+onBeforeMount(() => {
+  // 生产环境跳转需要考虑 base，开发环境直接跳 /zh/
+  const base = import.meta.env.BASE_URL
+  window.location.replace(`${base}zh/`)
+})
+</script>
+```
 ---
 
 ## GitHub Pages 的安装及配置使用
