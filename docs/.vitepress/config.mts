@@ -36,8 +36,8 @@ export default defineConfig({
             {
               text: '编程之道',
               items: [
-                { text: 'Java基础', link: '/zh/skillOdyssey/programmingWay/JavaBased/1.1.IO-NIO' },
-                { text: '第三方工具', link: '/zh/skillOdyssey/programmingWay/Plugin/EasyExcel' }
+                { text: 'Java基础', link: '/zh/skillOdyssey/programmingWay/javaBased/1.1.IO-NIO' },
+                { text: '常用功能', link: '/zh/skillOdyssey/programmingWay/functions/1.EasyExcel' }
               ],
             },
             // 算法与设计模式
@@ -78,36 +78,48 @@ export default defineConfig({
 
           // 程序设计
           // 1.Java基础的左侧栏
-          '/zh/skillOdyssey/programmingWay/JavaBased/': [
+          '/zh/skillOdyssey/programmingWay/javaBased/': [
             {
               text: '基础知识',
               items: [
-                { text: '输入/输出', link: '/zh/skillOdyssey/programmingWay/JavaBased/1.1.IO-NIO' },
-                { text: '常用注解', link: '/zh/skillOdyssey/programmingWay/JavaBased/1.2.Annotation' },
-                { text: 'SSH 与 HTTP下载', link: '/zh/skillOdyssey/programmingWay/JavaBased/1.3.SSH-HTTP' },
+                { text: '输入/输出', link: '/zh/skillOdyssey/programmingWay/javaBased/1.1.IO-NIO' },
+                { text: '常用注解', link: '/zh/skillOdyssey/programmingWay/javaBased/1.2.Annotation' },
               ]
             },
             {
               text: '并发编程',
               items: [
-                { text: '锁机制', link: '/zh/skillOdyssey/programmingWay/JavaBased/2.Lock-Mechanism' },
-                { text: '多线程', link: '/zh/skillOdyssey/programmingWay/JavaBased/3.Multithreading' },
-                { text: '线程池', link: '/zh/skillOdyssey/programmingWay/JavaBased/4.Thread-Pooling' },
-                { text: '并发工具包', link: '/zh/skillOdyssey/programmingWay/JavaBased/5.Concurrent-Toolkit' },
+                { text: '锁机制', link: '/zh/skillOdyssey/programmingWay/javaBased/2.1.Lock-Mechanism' },
+                { text: '多线程', link: '/zh/skillOdyssey/programmingWay/javaBased/2.2.Multithreading' },
+                { text: '异步编程', link: '/zh/skillOdyssey/programmingWay/javaBased/2.3.Asynchronous' },
+                { text: '并发工具包', link: '/zh/skillOdyssey/programmingWay/javaBased/5.Concurrent-Toolkit' },
               ]
             },
             {
               text: 'Socket与网络编程',
               items: [
-                { text: 'Websocket', link: '/zh/skillOdyssey/programmingWay/JavaBased/6.Socket-Network' }
+                { text: 'Websocket', link: '/zh/skillOdyssey/programmingWay/javaBased/6.Socket-Network' }
               ]
             },
           ],
-          '/zh/skillOdyssey/programmingWay/Plugin/': [
+
+          // 2.常用功能的左侧栏
+          '/zh/skillOdyssey/programmingWay/functions/': [
             {
-              text: '第三方工具',
+              text: '常用功能',
               items: [
-                { text: 'EasyExcel', link: '/zh/skillOdyssey/programmingWay/Plugin/EasyExcel' }
+                { text: 'EasyExcel', link: '/zh/skillOdyssey/programmingWay/functions/1.EasyExcel' },
+                { text: 'Mybatis-Plus', link: '/zh/skillOdyssey/programmingWay/functions/2.Mybatis-Plus' },
+                { text: 'SSH 与 HTTP下载', link: '/zh/skillOdyssey/programmingWay/functions/3.SSH-HTTP' },
+                { text: '定时任务', link: '/zh/skillOdyssey/programmingWay/functions/4.Scheduled-Tasks' },
+                { text: 'url请求', link: '/zh/skillOdyssey/programmingWay/functions/5.urlRequest.md' },
+                { text: '身份认证', link: '/zh/skillOdyssey/programmingWay/functions/6.Authentication.md' },
+                { text: '异常处理', link: '/zh/skillOdyssey/programmingWay/functions/7.Exception.md'},
+                { text: 'Redis缓存', link: '/zh/skillOdyssey/programmingWay/functions/9.Redis.md'},
+                { text: '布隆过滤器', link: '/zh/skillOdyssey/programmingWay/functions/10.Bloom.md'},
+                { text: '授权认证框架', link: '/zh/skillOdyssey/programmingWay/functions/11.AccessControl.md'},
+                { text: 'CSRF跨站请求伪造', link: '/zh/skillOdyssey/programmingWay/functions/12.CSRF.md'},
+                { text: 'Elasticsearch分布式搜素', link: '/zh/skillOdyssey/programmingWay/functions/13.Elasticsearch.md'},
               ]
             }
           ],
@@ -164,7 +176,9 @@ export default defineConfig({
               text: '常用软件',
               items: [
                 { text: 'Java 开发环境', link: '/zh/skillOdyssey/maintenanceMiddleware/softwarePlugins/JavaDev' },
-                { text: 'Maven 模块', link: '/zh/skillOdyssey/maintenanceMiddleware/softwarePlugins/Maven' }
+                { text: 'Maven 模块', link: '/zh/skillOdyssey/maintenanceMiddleware/softwarePlugins/Maven' },
+                { text: 'Spring脚手架', link: '/zh/skillOdyssey/maintenanceMiddleware/softwarePlugins/Scaffolding' },
+                { text: '必装软件', link: '/zh/skillOdyssey/maintenanceMiddleware/softwarePlugins/SoftWare' }
               ]
             }
           ],
@@ -231,8 +245,8 @@ export default defineConfig({
             {
               text: 'Programming Skills',
               items: [
-                { text: 'Java', link: '/en/skillOdyssey/programmingWay/JavaBased/1.1.IO-NIO' },
-                { text: 'Plugins', link: '/en/skillOdyssey/programmingWay/Plugin/EasyExcel' }
+                { text: 'Java', link: '/en/skillOdyssey/programmingWay/javaBased/1.1.IO-NIO' },
+                { text: 'Common functions', link: '/en/skillOdyssey/programmingWay/functions/1.EasyExcel' }
               ],
             },
             // 算法与设计模式
@@ -275,29 +289,31 @@ export default defineConfig({
 
           // 程序设计
           // 1.Java基础的左侧栏
-          '/en/skillOdyssey/programmingWay/JavaBased/': [
+          '/en/skillOdyssey/programmingWay/javaBased/': [
             {
               text: 'Base Knowledge',           // Java基础
               items: [
-                { text: 'IO/NIO', link: '/en/skillOdyssey/programmingWay/JavaBased/1.1.IO-NIO' },
-                { text: 'Annotation', link: '/en/skillOdyssey/programmingWay/JavaBased/1.2.Annotation' }
+                { text: 'IO/NIO', link: '/en/skillOdyssey/programmingWay/javaBased/1.1.IO-NIO' },
+                { text: 'Annotation', link: '/en/skillOdyssey/programmingWay/javaBased/1.2.Annotation' }
               ]
             },
             {
               text: 'Concurrency Programming',  // 并发编程
               items: [
-                { text: 'Lock Mechanism', link: '/en/skillOdyssey/programmingWay/JavaBased/Lock-Mechanism' },  // 锁机制
-                { text: 'Multithreading', link: '/en/skillOdyssey/programmingWay/JavaBased/Multithreading' },  // 多线程
-                { text: 'Thread Pooling', link: '/en/skillOdyssey/programmingWay/JavaBased/Thread-Pooling' },  // 线程池
-                { text: 'Concurrent Toolkit', link: '/en/skillOdyssey/programmingWay/JavaBased/Concurrent-Toolkit' },  // 并发工具包
+                { text: 'Lock Mechanism', link: '/en/skillOdyssey/programmingWay/javaBased/2.1.Lock-Mechanism' },  // 锁机制
+                { text: 'Multithreading', link: '/en/skillOdyssey/programmingWay/javaBased/2.2.Multithreading' },  // 多线程
+                { text: 'Asynchronous', link: '/en/skillOdyssey/programmingWay/javaBased/2.3.Asynchronous' },    // 异步编程
+                { text: 'Concurrent Toolkit', link: '/en/skillOdyssey/programmingWay/javaBased/Concurrent-Toolkit' },  // 并发工具包
               ]
             }
           ],
-          '/en/skillOdyssey/programmingWay/Plugin/': [
+          '/en/skillOdyssey/programmingWay/functions/': [
             {
-              text: 'Plugins',
+              text: 'Common functions',
               items: [
-                { text: 'EasyExcel', link: '/en/skillOdyssey/programmingWay/Plugin/EasyExcel' }
+                { text: 'EasyExcel', link: '/en/skillOdyssey/programmingWay/functions/1.EasyExcel' },
+                { text: 'Mybatis-Plus', link: '/en/skillOdyssey/programmingWay/functions/2.Mybatis-Plus' },
+                { text: 'SSH and HTTP downloads', link: '/en/skillOdyssey/programmingWay/functions/3.SSH-HTTP' },
               ]
             }
           ],
